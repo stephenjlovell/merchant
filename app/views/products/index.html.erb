@@ -6,6 +6,7 @@
       <td>Title</td>
       <td>Description</td>
       <td>Price</td>
+      <td>Stock</td>
     </tr>
   </thead>
 
@@ -15,6 +16,7 @@
         <td><%= image_tag "products/#{product.image_url}" %></td>
         <td><span class="product_title"><%= product.title %></span><%= product.description %></td>
         <td><%= number_to_currency(product.price) %></td>
+        <td><%= print_stock(product.stock) %></td>
       </tr>
     <% end %>
   </tbody>
