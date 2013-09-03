@@ -36,12 +36,10 @@ class OrderItemsController < ApplicationController
     end
   end
 
-  # DELETE /order_items/1
-  # DELETE /order_items/1.json
   def destroy
     @order_item.destroy
     respond_to do |format|
-      format.html { redirect_to order_items_url }
+      format.html { redirect_to order_url(session[:order_id]) }
       format.json { head :no_content }
     end
   end
