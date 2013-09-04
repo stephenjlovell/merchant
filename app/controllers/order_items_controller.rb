@@ -45,14 +45,6 @@ class OrderItemsController < ApplicationController
   end
 
   private
-    def load_order
-      @order = Order.find_or_initialize_by_id(id: session[:order_id] ,status: :unsubmitted)
-      if @order.new_record? 
-        @order.save!
-        session[:order_id] = @order.id
-      end
-    end
-
     # Use callbacks to share common setup or constraints between actions.
     def set_order_item
       @order_item = OrderItem.find(params[:id])
